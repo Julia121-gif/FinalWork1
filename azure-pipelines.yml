@@ -8,7 +8,18 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
+- task: AppCenterTest@1
+  inputs:
+- task: AppCenterTest@1
+  inputs:
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    frameworkOption: 'appium'
+    credentialsOption: 'inputs'
+    localeOption: 'en_US'
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    frameworkOption: 'appium'
+    credentialsOption: 'serviceEndpoint'
+    localeOption: 'en_US'
 strategy:
   matrix:
     Python38:
